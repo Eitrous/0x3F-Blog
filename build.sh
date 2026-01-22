@@ -5,4 +5,4 @@ wget -qO- https://github.com/jgm/pandoc/releases/download/3.8.3/pandoc-3.8.3-lin
 export PATH="./pandoc/bin:$PATH"
 
 # yarn run build
-hexo generate
+npm run build
