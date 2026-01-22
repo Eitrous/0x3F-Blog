@@ -1,6 +1,6 @@
 ---
 title: 层次分析法
-date: 2026-1-23
+date: 2026-1-22
 tags: [数学建模, MATLAB]
 mathjax: true
 ---
