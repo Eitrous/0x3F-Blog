@@ -543,11 +543,11 @@ pdf:
 
 # Mermaid tag
 mermaid:
-  enable: false
+  enable: true
   # Available themes: default | dark | forest | neutral
   theme:
-    light: default
-    dark: dark
+    light: neutral
+    dark: neutral
 
 # WaveDrom tag
 wavedrom:
