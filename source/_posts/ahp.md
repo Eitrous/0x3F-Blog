@@ -82,12 +82,12 @@ graph LR
    - 不为一致矩阵时，最大特征根 $\lambda_{max} > n$ ，$\lambda_{max} - n$ 越大，不一致程度越大
 4. 一致性检验方法（使用判断矩阵前先要检验一致性，确保局部逻辑基本自洽）：
    - 计算一致性指标
-   $$ CI = \frac{\lambda_{max} - n}{n - 1} = \begin{cases} 0 \quad &有完全的一致性 \\ 接近0 \quad &有满意的一致性 \\ 越大 \quad &一致性越差 \end{cases}$$
+   $$ CI = \frac{\lambda_{max} - n}{n - 1} = \begin{cases} 0 \quad &有完全的一致性 \cr 接近0 \quad &有满意的一致性 \cr 越大 \quad &一致性越差 \end{cases}$$
    - 随机一致性指标 $RI$ ： 随机生成的大量矩阵的 $CI$ 的均值
 
-   $$ \begin{array}{ccc} \hline \textbf{$n$} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ RI & 0 & 0 & 0.58 & 0.90 & 1.12 & 1.24 & 1.32 & 1.41 & 1.45 & 1.49 & 1.51 \\ \hline \end{array} $$
+   $$ \begin{array}{ccc} \hline \textbf{$n$} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \cr RI & 0 & 0 & 0.58 & 0.90 & 1.12 & 1.24 & 1.32 & 1.41 & 1.45 & 1.49 & 1.51 \cr \hline \end{array} $$
    - 一致性比例
-  $$ CR = \frac{CI}{RI} = \begin{cases} < 0.1 \quad &一致 \\ \geq 0.1 \quad &不一致  \end{cases}$$
+  $$ CR = \frac{CI}{RI} = \begin{cases} < 0.1 \quad &一致 \cr \geq 0.1 \quad &不一致  \end{cases}$$
  
 
 5. 若 $CR \geq 0.1$ 需进行修正：
@@ -118,11 +118,11 @@ graph LR
 
 $$ 最终得分 = \sum (在某一指标的得分 \times 该指标的权重) $$
 
-## 层次总排序一致性检验
+## 层次总排序一致性检验$
 
 $$
 f(x) = \begin{cases} 
-   公式1, & 条件1 \\
-   公式2, & 条件2
+   x, & x \ge 0 \cr
+   -x, & x < 0 
 \end{cases}
 $$

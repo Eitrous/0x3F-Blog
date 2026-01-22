@@ -141,12 +141,12 @@ mathjax:
     # see http://docs.mathjax.org/en/latest/options/input/tex.html#tex-extension-options for more detail
 
 
-pandoc:
-  args:
-    - '-f'
-    - 'commonmark_x'
-    - '-t'
-    - 'html'
-    - '--mathjax'
-  extensions:
-    - '-implicit_figures'
+  # pandoc:
+  #   args:
+  #     - '-f'
+  #     - 'commonmark_x'
+  #     - '-t'
+  #     - 'html'
+  #     - '--mathjax'
+  #   extensions:
+  #     - '-implicit_figures'
