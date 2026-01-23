@@ -1,0 +1,7 @@
+{# Vercel Web Analytics #}
+{%- if theme.vercel_analytics and theme.vercel_analytics.enable %}
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+{%- endif %}
