@@ -10,41 +10,41 @@ tags: Game
 
 [这是游戏链接](https://store.steampowered.com/app/1720850/AB/)
 
-## A=B
+# A=B
 
-### 1-1
+## 1-1
 ```
 a=b
 ```
 
-### 1-2
+## 1-2
 ```
 a=A
 b=B
 c=C
 ```
 
-### 1-3
+## 1-3
 ```
 aa=a
 bb=b
 cc=c
 ```
 
-### 1-4
+## 1-4
 ```
 aaa=aa
 aa=
 ```
 
-### 1-5
+## 1-5
 ```
 ba=ab
 ca=ac
 cb=bc
 ```
 
-### 1-6
+## 1-6
 ```
 ab=
 ba=
@@ -52,14 +52,14 @@ bb=b
 aa=a
 ```
 
-## 关键字
+# 关键字
 
-### 2-1
+## 2-1
 ```
 =(return)helloworld
 ```
 
-### 2-2
+## 2-2
 ```
 b=
 c=
@@ -67,7 +67,7 @@ aaa=(return)true
 =(return)false
 ```
 
-### 2-3
+## 2-3
 ```
 b=a
 c=a
@@ -76,7 +76,7 @@ aaa=(return)true
 =(return)false
 ```
 
-### 2-4
+## 2-4
 ```
 b=a
 c=a
@@ -86,7 +86,7 @@ a=(return)1
 =(return)0
 ```
 
-### 2-5
+## 2-5
 ```
 ba=ab
 ca=ac
@@ -100,7 +100,7 @@ cc=(return)false
 =(return)true
 ```
 
-### 2-6
+## 2-6
 ```
 aaa=aa
 aa=M
@@ -117,4 +117,4 @@ N=(return)true
 =(return)false
 ```
 
-## 首尾
+# 首尾

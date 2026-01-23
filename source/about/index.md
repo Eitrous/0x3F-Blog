@@ -2,6 +2,7 @@
 title: A B O U T
 date: 2026-01-21 06:43:51
 type: 'about'
+sidebar: false
 ---
 <img src='/images/0x3f-Icon.svg' alt='这里应该有个logo' height=70 />
 

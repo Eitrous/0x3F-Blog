@@ -150,3 +150,9 @@ mathjax:
   #     - '--mathjax'
   #   extensions:
   #     - '-implicit_figures'
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
