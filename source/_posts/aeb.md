@@ -4,9 +4,11 @@ date: 2026-1-21
 tags: Game
 ---
 
-没写的就是卡关了||没玩||没想出好解
+没写的就是卡关了||没玩到||没想出好解
 
 <!-- more -->
+
+[这是游戏链接](https://store.steampowered.com/app/1720850/AB/)
 
 ## A=B
 

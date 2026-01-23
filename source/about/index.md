@@ -1,5 +1,5 @@
 ---
-title: A b o u t
+title: A B O U T
 date: 2026-01-21 06:43:51
 type: 'about'
 ---
