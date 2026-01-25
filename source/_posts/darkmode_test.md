@@ -1,6 +1,6 @@
 ---
 title: 夜间模式测试
-date: 1970-1-1 00:00:00
+date: 2026-1-25
 tags: _test
 ---
 <p/>
@@ -9,7 +9,10 @@ tags: _test
 图片测试
 <img src='/images/tenshi.jpg' alt='这是天子' />
 
-代码块测试
+代码测试
+
+这是`inline code`内联代码块
+
 ```cpp
 #include<bits/stdc++.h>
 #define endl '\n'
@@ -40,4 +43,4 @@ signed main()
 ```
 
 文字测试
-😡：原神牛逼！ 👈🤣👉  😡：鸣潮牛逼！
+<span class="darkmode-ignore">😡</span>：原神牛逼！ <span class="darkmode-ignore">👈🤣👉</span>  <span class="darkmode-ignore">😡</span>：鸣潮牛逼！

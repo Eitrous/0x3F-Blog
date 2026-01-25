@@ -16,22 +16,12 @@
     /* background: #f9f9f9;               可选：加个浅灰背景条 */
 }
 
-.sidebar {
-    backgroundColor: #111;
-}
-
 .with-love {
     color: #919191
 }
 
-.darkmode-layer {
-  z-index: 25;
-}
-
-/* 针对 Hexo 常见的 Emoji 类名 */
-.emoji, .github-emoji {
-    isolation: isolate;
-    display: inline-block;
+.darkmode-layer, .darkmode-toggle {
+  z-index: 41;
 }
 
 /* 默认状态（浅色模式）：显示月亮，隐藏太阳 */
@@ -54,5 +44,18 @@ body.darkmode--activated .darkmode-toggle .fa-moon {
 .darkmode-toggle i {
     font-size: 1.5rem; /* 调整图标大小 */
     line-height: 3rem; /* 保持垂直居中 */
-    z-index: 25;
+    z-index: 500;
 }
+
+.darkmode--activated {
+
+    img:not(.site-author-image),video,.emoji,.github-emoji,.darkmode-ignore,aside.sidebar {
+        filter: invert(100%);
+    }
+
+    code {
+        color: #555;
+        background: #e1e1e1;
+    }
+}
+
