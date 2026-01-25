@@ -156,3 +156,7 @@ search:
   field: post
   content: true
   format: html
+
+# symbols_count_time:
+#   symbols: true
+#   time: true
