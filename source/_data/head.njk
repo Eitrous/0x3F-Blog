@@ -128,9 +128,9 @@
                 time: '0.3s',
                 mixColor: '#fff',
                 backgroundColor: '#fff',
-                buttonColorDark: '#000',
+                buttonColorDark: '#100f2c',
                 buttonColorLight: '#fff',
-                label: '<i class="fa-regular fa-sun" style="color: #000;"></i><i class="fa-regular fa-moon" style="color: #fff;"></i>',
+                label: '',
                 saveInCookies: !0,
                 autoMatchOsTheme: !0
               },
@@ -276,11 +276,26 @@
     }
   ]);
 });
-
 </script>
+
+{%- if theme.darkmode_js.enable %}
 <script>
+  var options = {
+    bottom: '32px',
+    right: '32px',
+    left: 'unset',
+    time: '0.3s',
+    mixColor: '#fff',
+    backgroundColor: '#fff',
+    buttonColorDark: '#000',
+    buttonColorLight: '#fff',
+    label: '<i class="fa-regular fa-sun" style="color: #000;"></i><i class="fa-regular fa-moon" style="color: #fff;"></i>',
+    saveInCookies: !0,
+    autoMatchOsTheme: !0
+  }
   function addDarkmodeWidget() {
-    new Darkmode().showWidget();
+    new Darkmode(options).showWidget();
   }
   window.addEventListener('load', addDarkmodeWidget);
 </script>
+{%- endif %}
