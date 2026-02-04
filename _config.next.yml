@@ -501,7 +501,7 @@ bing_site_verification: 8DFC999F1967BC47C0FBDB9DC5E5A437
 
 # Yandex Webmaster tools verification.
 # See: https://webmaster.yandex.ru
-yandex_site_verification: 60829dcabc25ce77
+yandex_site_verification:
 
 # Baidu Webmaster tools verification.
 # See: https://ziyuan.baidu.com/site
