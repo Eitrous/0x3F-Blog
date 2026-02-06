@@ -1,11 +1,11 @@
 ---
-title: A B O U T
+title: About...
 date: 2026-01-21 06:43:51
 type: 'about'
 sidebar: false
 ---
 <div style='display:flex;justify-content:center;'>
-    <img src='/images/0x3f-Icon.svg' alt='这里应该有个logo' height=80 />
+    <img src='/images/0x3f-Icon-pre.svg' alt='这里应该有个logo' height=80 />
 </div>
 
 # > 关于这个网站 _

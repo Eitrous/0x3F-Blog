@@ -2,7 +2,7 @@
 title: 层次分析法
 date: 2026-1-22
 tags: [数学建模, MATLAB]
-mathjax: true
+categories: 数模
 ---
 
 > 层次分析法：一种用于组织和分析复杂决策问题的结构化技术

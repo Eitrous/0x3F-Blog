@@ -2,6 +2,7 @@
 title: NexT主题添加明暗模式切换按钮
 date: 2026-1-26
 tags: [Web, 前端, Hexo, NexT]
+categories: 博客建设
 ---
 
 NexT主题本身是没有明暗模式主动切换功能的，只能设置成“跟随系统设置”
