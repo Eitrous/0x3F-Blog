@@ -22,8 +22,10 @@ sidebar: false
 
 <i class="fa-solid fa-code"/> 自己代码力爆下げ↓↓的蒟蒻ACMer
 
+<i class="fa-solid fa-microchip"/> 电子废物可持续发展专家
+
 <i class="fa-solid fa-robot"/> 折腾笔涂的胶佬
 
 <i class="fa-solid fa-cubes"/> 不会3D建模的3D打印玩家
 
-<i class="fa-solid fa-binoculars"/> 脱坑数年的天文爱好者
+<i class="fa-solid fa-binoculars"/> 淡坑数年的天文爱好者
