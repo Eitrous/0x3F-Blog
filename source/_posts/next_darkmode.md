@@ -19,7 +19,7 @@ Darkmode.js: v1.5.7
 {% endnote %}
 
 ## 安装Darkmode.js
-下载Darkmode.js源码：[官方仓库]('https://github.com/sandoche/Darkmode.js')
+下载Darkmode.js源码：[官方仓库](https://github.com/sandoche/Darkmode.js)
 
 把文件放在`./source`目录下，这里我放在`./source/lib`下
 
