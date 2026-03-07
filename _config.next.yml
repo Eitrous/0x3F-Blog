@@ -926,4 +926,4 @@ images: images
 
 # darkmode.js
 darkmode_js: 
-   enable: true
+   enable: false
