@@ -33,7 +33,7 @@ categories: 吸入过量珂罗尔天然气后瞎jb写的弱智小作文
 默认设置下，OpenClaw无法执行exec，也就没办法操控shell。在`openclaw.json`里解除安全限制后，它就可以操作命令行与读写文件了。
 
 我让它写个Python爬虫爬取Danbooru上的车万同人图，它思考很久后开始发癫：
-<div style='display:flex;justify-content:center;'>
+<div style='justify-content:center;'>
     <img src="/images/openclaw/bug0.jpg" height=700 />
     <img src="/images/openclaw/bug1.jpg" height=700 />
 </div>
@@ -44,7 +44,7 @@ categories: 吸入过量珂罗尔天然气后瞎jb写的弱智小作文
 
 我又让它安装了Python的Pillow库和FFmpeg，它也可以进行图片和视频处理了：
 
-<div style='display:flex;justify-content:center;'>
+<div style='justify-content:center;'>
     <img src="/images/openclaw/pillow.jpg" height=400 />
     <img src="/images/openclaw/ffmpeg.jpg" height=400 />
 </div>
