@@ -16,6 +16,20 @@
 //     /* background: #f9f9f9;               可选：加个浅灰背景条 */
 // }
 
+/* ==================================
+   全局网格背景 (Grid Background)
+   ================================== */
+body {
+  /* 底色：极浅的灰白色 */
+  background-color: #fcfcfc; 
+  /* 绘制横纵两条线，颜色使用极低透明度的黑色 rgba(0,0,0,0.05) */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  /* 设定每个网格的大小为 30x30 像素 */
+  background-size: 30px 30px; 
+}
+
 body {
   color: #1a1a1a; 
 }
@@ -68,4 +82,5 @@ body.darkmode--activated .darkmode-toggle .fa-moon {
         background: #e1e1e1;
     }
 }
+
 

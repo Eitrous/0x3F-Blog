@@ -3,6 +3,7 @@ title: 模糊综合评价
 date: 2026-1-23
 tags: [数学建模, MATLAB]
 categories: 数模
+updated: false
 ---
 
 > 模糊综合评价：一种基于模糊数学的综合评价方法
