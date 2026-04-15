@@ -10,12 +10,6 @@ update: false
 
 <!--more-->
 
-{% note info %}
-
-**网站正在紧急迁移存储库，暂时无法访问**
-
-{% endnote %}
-
 总之，目前这个网站还在开发阶段，大部分功能已经完成，但肯定还有一些问题。
 
 投稿暂时都是由我审核的，所以不能保证每个稿件都能及时过审。
@@ -25,3 +19,11 @@ update: false
 <i class="fa-brands fa-github"/> [Github](https://github.com/Eitrous)
 
 <i class="fa-solid fa-envelope"/> [Email](mailto:hzx.zxhuang@outlook.com)
+
+# 投稿须知
+
+- 本站为 **东方Project** 同人网站，暂时**不接受**其它 IP 相关的投稿。
+- 这个世界注定会被 Fumo 占领。
+- 投稿内容可以不局限于 Fumo，也可以是白泽球、bjd等等（必须东方相关）。
+- 严禁 **NSFW** 内容。
+- （待补充）
