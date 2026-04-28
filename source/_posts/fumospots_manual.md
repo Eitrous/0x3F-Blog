@@ -18,7 +18,7 @@ update: false
 
 <i class="fa-brands fa-github"/> [Github](https://github.com/Eitrous)
 
-<i class="fa-solid fa-envelope"/> [Email](mailto:eitrous@0x-3f.com)
+<i class="fa-solid fa-envelope"/> [Email](mailto:i@0x3f.io)
 
 # 投稿须知
 
