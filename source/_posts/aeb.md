@@ -2,6 +2,7 @@
 title: A=B游玩记录
 date: 2026-1-21
 tags: Game
+categories: 电动
 updated: false
 ---
 
