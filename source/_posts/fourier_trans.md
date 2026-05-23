@@ -10,6 +10,7 @@ updated: false
 ## Fourier 变换想要解决什么问题
 
 很多信号看起来非常复杂，比如：
+
 - 一张图片的灰度变化
 - 电路里的电压变化
 - 电磁波
@@ -138,8 +139,210 @@ $$F(\omega)=a(\omega)+ib(\omega)=\left|F(\omega)\right|e^{i\phi(\omega)}$$
 
 但是让计算机保存 $(-\infty,+\infty)$ 上的函数值和精确计算无穷区间上的积分太不现实了，所以需要把连续变量和积分离散化。
 
-{% note info %}
+## 离散 Fourier 变换（DFT）
 
-**待更新**
+为了方便计算机处理，我们把连续的信号分成有限长度的离散的序列：
 
-{% endnote %}
+$$
+x[0], x[1], x[2], \ldots, x[N-1]
+$$
+
+注意，这里的采样间隔相同。等距采样能让后面的复指数基形成整齐的正交结构。
+
+现在来看 DFT 的公式：
+
+$$
+X[k]=\sum_{n=0}^{N-1}x[n]e^{-i\frac{2\pi}{N}kn}
+$$
+
+其中：
+
+- $x[n]$：原始离散信号
+- $X[k]$：第 $k$ 个频率分量（$k=0$ 时是直流分量）
+- $n$：时间采样点编号
+- $k$：频率编号
+- $N$：采样点总数
+- $e^{-i\frac{2\pi}{N}kn}$：用于检测第 $k$ 个频率的复指数波
+
+逆 DFT 就是：
+
+$$
+x[n]=\frac{1}{N}\sum_{k=0}^{N-1}X[k]e^{i\frac{2\pi}{N}kn}
+$$
+
+即：
+
+> 任何一个长度为 $N$ 的序列，都可以表示成 $N$ 个复指数序列的叠加。
+
+### 这个式子怎么来的
+
+设采样点是：
+
+$$
+t_n=t_0+n\Delta t
+$$
+
+那么检测频率为 $\omega_k$ 时，所用复指数波为：
+
+$$
+e^{-i\omega_kt_n}
+$$
+
+$\omega_k$ 又能写成：
+
+$$
+\omega_k=\frac{2\pi k}{T}=\frac{2\pi k}{N\Delta t}
+$$
+
+
+将连续 Fourier 变换的积分转化为 Riemann 求和近似式：
+
+$$
+\begin{aligned}
+F(\omega_k)&\approx\Delta t\sum_{n=0}^{N-1}x[n]e^{-i\omega_kt_n} \\\\
+&=\Delta t\sum_{n=0}^{N-1}x[n]e^{-i2\pi \frac{k(t_0+n\Delta t)}{N\Delta t}} \\\\
+&= \Delta te^{-i2\pi \frac{kt_0}{N\Delta t}}\sum_{n=0}^{N-1}x[n]e^{-i\frac{2\pi}{N}kn}
+\end{aligned}
+$$
+
+前面的 $\Delta te^{-i2\pi \frac{kt_0}{N\Delta t}}$ 只与采样起点、采样间隔和频率编号有关，因此核心部分就是：
+
+$$
+X[k]=\sum_{n=0}^{N-1}x[n]e^{-i\frac{2\pi}{N}kn}
+$$
+
+### 怎么理解
+
+#### 1. 几何视角
+
+乘上 $e^{-i\frac{2\pi}{N}kn}$，实际就是将信号“旋转”。频率正好匹配的成分会被转成近似固定的方向，求和时不断累积；频率不匹配的成分会在复平面上绕圈，求和后相互抵消。
+
+#### 2. 代数视角
+
+将原来的序列看成 $N$ 维向量：
+
+$$
+x=(x[0],x[1],\dots,x[N-1])
+$$
+
+DFT 做的就是把它从“时间采样点基底”换到“频率基底”：
+
+$$
+v_k=\left(1,e^{-i\frac{2\pi}{N}k},e^{-i\frac{2\pi}{N}2k},\dots,e^{-i\frac{2\pi}{N}(N-1)k}\right)
+$$
+
+因此可以写成矩阵乘法：
+
+$$
+X=Fx
+$$
+
+其中：
+
+$$
+F_{k,n}=e^{-i\frac{2\pi}{N}kn}
+$$
+
+并且由于这 $N$ 个基底是正交的，彼此互不干扰，保证能分离出来。
+
+### Fourier 矩阵
+
+令：
+
+$$
+\omega_N=e^{-i2\pi/N}
+$$
+
+这是一个 **$N$ 次本原单位根**，满足 $\omega_N^N=1$。可以把 DFT 写成更简洁的形式：
+
+$$
+X[k]=\sum_{n=0}^{N-1}x[n]\omega_N^{kn}
+$$
+
+若定义 $x=(x[0],x[1],\dots,x[N-1])^T,y=(X[0],X[1],\dots,X[N-1])^T$，还可以写得再简洁一些：
+
+$$
+y=F_Nx
+$$
+
+其中 $F_N$ 为 Fourier 矩阵：
+
+$$
+(\omega_N^{kn})_{k,n=0}^{N-1}
+$$
+
+行对应频率编号，列对应输入位置。
+
+### Fourier 矩阵的逆
+
+Fourier 矩阵通常不是 Hermite 矩阵，但具有非常重要的正交性：
+
+$$
+\begin{aligned}
+F_N^HF_N=N\cdot I_N \\\\
+F_N^{-1}=\frac{1}{N}F_N^H
+\end{aligned}
+$$
+
+由此可得逆 DFT。直接利用 DFT 定义式进行计算，复杂度为 $O(N^2)$，实际情况中为了加快计算，需要用到**快速 Fourier 变换**。
+
+## 快速 Fourier 变换（FFT）
+
+### 单位根的递归结构
+
+$2m$ 次单位根平方以后，会变成 $m$ 次单位根。也就是说，高阶单位根里面天然包含低阶单位根结构。
+
+### 快速 Fourier 变换
+
+以下我们假设 $N$ 为 2 的幂。事实上，即使 $N$ 不为 2 的幂，我们也可以补零。
+
+我们可以将 DFT 定义式按偶数下标和奇数下标拆开：
+
+$$
+\begin{aligned}
+X[k]&=\sum_{n=0}^{N-1}x[n]\omega_N^{kn} \\\\
+&=\sum_{m=0}^{\frac{N}{2}-1}x[2m]\omega_N^{k2m}+\sum_{m=0}^{\frac{N}{2}-1}x[2m+1]\omega_N^{k(2m+1)} \\\\
+&=\sum_{m=0}^{\frac{N}{2}-1}x[2m]\omega_N^{k2m}+\omega_N^k\sum_{m=0}^{\frac{N}{2}-1}x[2m+1]\omega_N^{k2m}
+\end{aligned}
+$$
+
+由单位根的递归结构可知：
+
+$$
+\omega_N^2=\omega_{\frac{N}{2}}
+$$
+
+所以：
+
+$$
+X[k]=\sum_{m=0}^{\frac{N}{2}-1}x[2m]\omega_{\frac{N}{2}}^{km}+\omega_N^k\sum_{m=0}^{\frac{N}{2}-1}x[2m+1]\omega_{\frac{N}{2}}^{km}
+$$
+
+这就把一个大的 DFT 拆成了两个小的 DFT。对 $0\le k<\frac{N}{2}$，还可以得到：
+
+$$
+\begin{aligned}
+X[k+\frac{N}{2}]&=\sum_{m=0}^{\frac{N}{2}-1}x[2m]\omega_{\frac{N}{2}}^{m(k+\frac{N}{2})}+\omega_N^{k+\frac{N}{2}}\sum_{m=0}^{\frac{N}{2}-1}x[2m+1]\omega_{\frac{N}{2}}^{m(k+\frac{N}{2})} \\\\
+&=\sum_{m=0}^{\frac{N}{2}-1}x[2m]\omega_{\frac{N}{2}}^{km}-\omega_N^k\sum_{m=0}^{\frac{N}{2}-1}x[2m+1]\omega_{\frac{N}{2}}^{km}
+\end{aligned}
+$$
+
+我们定义：
+
+$$
+\begin{aligned}
+E[k]&=\sum_{m=0}^{\frac{N}{2}-1}x[2m]\omega_{\frac{N}{2}}^{km} \\\\
+O[k]&=\sum_{m=0}^{\frac{N}{2}-1}x[2m+1]\omega_{\frac{N}{2}}^{km}
+\end{aligned}
+$$
+
+那么有：
+
+$$
+\begin{aligned}
+X[k]&=E[k]+\omega_N^kO[k] \\\\
+X[k+\frac{N}{2}]&=E[k]-\omega_N^kO[k]
+\end{aligned}
+$$
+
+这就将一个 $N$ 点 DFT 换成了两个 $\frac{N}{2}$ 点 DFT 和一次合并操作，并可以一直递归下去。总共 $\log_2N$ 层，每一层合并需要 $O(N)$ 的运算，总复杂度为 $O(N\log N)$。
