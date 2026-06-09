@@ -8,3 +8,10 @@ public/
 _multiconfig.yml
 build.sh
 
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
