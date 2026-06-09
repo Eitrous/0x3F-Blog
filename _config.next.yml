@@ -73,7 +73,7 @@ creative_commons:
   license: by-nc-sa
   # Available values: big | small
   size: small
-  sidebar: false
+  sidebar: true
   post: false
   # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
   # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
@@ -167,7 +167,7 @@ social:
   Portal: https://0x3f.io || fa fa-user
   E-Mail: mailto:me@0x3f.io || fa fa-envelope
   GitHub: https://github.com/Eitrous || fab fa-github
-  Codeforces: https://codeforces.com/profile/eitrous || fa fa-chart-simple
+  #Codeforces: https://codeforces.com/profile/eitrous || fa fa-chart-simple
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Twitter: https://twitter.com/yourname || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
@@ -188,8 +188,6 @@ links_settings:
   layout: block
 
 links:
-  Eindows⑨8: https://os.0x-3f.com
-  ES-DOS: https://dos.0x-3f.com
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).
@@ -643,7 +641,7 @@ quicklink:
 # Use Animate.css to animate everything.
 # For more information: https://animate.style
 motion:
-  enable: true
+  enable: false
   async: true
   duration: 10
   transition:

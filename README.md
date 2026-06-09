@@ -3,5 +3,5 @@
 ```js
 frame: Hexo
 theme: NexT
-url: 'blog.0x-3f.com'
+url: 'blog.0x3f.io'
 ```
