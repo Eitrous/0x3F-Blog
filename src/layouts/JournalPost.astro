@@ -1,0 +1,166 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import 'katex/dist/katex.min.css';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  tags?: string[];
+  categories?: string[];
+}
+
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  tags = [],
+  categories = [],
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+
+    <title>{title}</title>
+    <meta
+      name="description"
+      content={description}
+    />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <article>
+        <header>
+          <h1>{title}</h1>
+
+          <div class="meta-time">
+            <span>
+            Posted on
+            <time datetime={pubDate.toISOString()}>
+              {pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+            </span>
+
+          {
+            updatedDate && (
+              <span>
+                Updated on
+                <time datetime={updatedDate.toISOString()}>
+                  {updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </span>
+            )
+          }
+          </div>
+
+          <div class="categories">
+            {
+              categories.map((category) => (
+                <span>In {category}</span>
+              ))
+            }
+          </div>
+
+          <div class="tags">
+            Tags:
+            {
+              tags.map((tag) => (
+                <span>#{tag}</span>
+              ))
+            }
+          </div>
+
+        </header>
+
+        <div class="content">
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body {
+    font-family:  "Noto Serif CJK", Georgia, "Times New Roman", serif;
+  }
+
+  main {
+    width: min(920px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 40px 0 80px;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+
+  article h1 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    line-height: 1.2;
+  }
+
+  .meta-time {
+    display: flex;
+    gap: 24px;
+  }
+
+  .categories {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .content {
+    margin-top: 48px;
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 32px auto;
+    border-radius: 8px;
+  }
+
+  .content pre {
+    overflow-x: auto;
+    padding: 18px;
+    border-radius: 8px;
+  }
+
+  .content a {
+    text-underline-offset: 4px;
+  }
+
+  .content :global(.katex-display) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.25rem 0;
+  }
+</style>

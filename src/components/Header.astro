@@ -1,0 +1,49 @@
+---
+import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
+import '../styles/global.css';
+---
+
+<header>
+	<nav>
+		<span class="site-title">{SITE_TITLE}</span>
+		<span class="internal-links">
+			<HeaderLink href="/">HOME</HeaderLink>
+			<HeaderLink href="/essays">ESSAYS</HeaderLink>
+            <HeaderLink href="/journal">JOURNAL</HeaderLink>
+            <HeaderLink href="/notes">NOTES</HeaderLink>
+			<HeaderLink href="/about">ABOUT</HeaderLink>
+		</span>
+	</nav>
+</header>
+<style>
+    body {
+        font-family: var(--font);
+        margin: 0;
+    }
+
+    header {
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: center;
+    }
+
+    nav {
+        width: min(1120px, calc(100% - 40px));
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.8rem 0;  
+    }
+
+    .site-title {
+        font-size: 1.875rem;
+        letter-spacing: 0.02em;
+        font-weight: normal;
+    }
+
+    .internal-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+</style>

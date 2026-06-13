@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+const today = new Date();
+---
+
+<footer>
+	<div class="footer">
+		<span>&copy; {today.getFullYear()} <a href="https://0x3f.io/" target="_blank" rel="noopener">Eitrous</a>.</span>
+		<span>Built with <a href="https://astro.build/" target="_blank" rel="noopener">Astro</a>.</span>
+	</div>
+</footer>
+<style>
+	.footer {
+		width: min(1120px, calc(100% - 40px));
+    	margin: 0 auto;
+		padding: 30px 0px;
+		color: #444;
+		font-size: 0.9rem;
+		border-top: 1px solid var(--border);
+		display: flex;
+		justify-content: space-between;
+	}
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: #999;
+	}
+</style>

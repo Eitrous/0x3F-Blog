@@ -1,0 +1,9 @@
+:root {
+	--font: Georgia, "Times New Roman", "Noto Serif CJK", serif;
+	--text: #000;
+	--muted: #666;
+	--border: #e5e5e5;
+}
+body {
+	font-family: var(--font);
+}

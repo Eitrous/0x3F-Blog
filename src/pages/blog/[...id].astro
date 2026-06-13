@@ -1,0 +1,59 @@
+---
+import { getCollection, render } from 'astro:content';
+import EssayPost from '../../layouts/EssayPost.astro';
+import JournalPost from '../../layouts/JournalPost.astro';
+import NotePost from '../../layouts/NotePost.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection(
+    'blog',
+    ({ data }) => !data.draft,
+  );
+
+  return posts.map((post) => ({
+    params: {
+      id: post.id,
+    },
+    props: {
+      post,
+    },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+{post.data.type === 'Essay' && (
+  <EssayPost
+    title={post.data.title}
+    description={post.data.description}
+    pubDate={post.data.pubDate}
+    updatedDate={post.data.updatedDate}
+    tags={post.data.tags}
+  >
+    <Content />
+  </EssayPost>
+)}
+{post.data.type === 'Journal' && (
+  <JournalPost
+    title={post.data.title}
+    description={post.data.description}
+    pubDate={post.data.pubDate}
+    updatedDate={post.data.updatedDate}
+    tags={post.data.tags}
+  >
+    <Content />
+  </JournalPost>
+)}
+{post.data.type === 'Note' && (
+  <NotePost
+    title={post.data.title}
+    description={post.data.description}
+    pubDate={post.data.pubDate}
+    updatedDate={post.data.updatedDate}
+    tags={post.data.tags}
+  >
+    <Content />
+  </NotePost>
+)}
