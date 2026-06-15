@@ -1,0 +1,143 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>About</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="hero">
+        <h1>About</h1>
+      </section>
+      <section class="about-grid container">
+        <div>
+          <p class="section-label">Why it exists</p>
+        </div>
+
+        <div class="about-content">
+          <p>I hope to have a place to store the things I write.</p>
+          <p>
+            Also, it would help me practice my English writing skills, since
+            English is not my first language.
+          </p>
+        </div>
+      </section>
+      <section class="about-grid container">
+        <div>
+          <p class="section-label">Why this style</p>
+        </div>
+
+        <div class="about-content">
+          <p>Two reasons</p>
+          <p>
+            First, the insights from ESR's <a href="http://www.catb.org/~esr/html-hell.html" target="_blank">The HTML Hell Page</a> and moh_kohn's <a href="https://mohkohn.co.uk/writing/html-first/" target="_blank">How building an HTML-first site doubled our users overnight</a>;
+          </p>
+          <p>
+            Second, in today's world where AI slop websites are so widespread, I
+            want to design a site that absolutely doesn't look
+            AI-generated—with the assistance of AI.
+          </p>
+        </div>
+      </section>
+      <section class="about-grid container last">
+        <div>
+          <p class="section-label">Who are you</p>
+        </div>
+
+        <div class="about-content">
+          <p>
+            That doesn't matter :)
+          </p>
+        </div>
+    </main>
+    <Footer />
+  </body>
+  <style>
+    body {
+      font-family: var(--font);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      flex: 1;
+    }
+
+    .hero {
+      padding: 144px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 96px);
+      line-height: 1;
+      font-weight: normal;
+      letter-spacing: -0.04em;
+      margin: 0;
+      text-align: center;
+    }
+
+    .about-grid {
+      padding: 70px 0;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 70px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .container {
+      width: min(92%, 1040px);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 1.375em;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text);
+      margin-top: 19px;
+    }
+
+    .about-content p {
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .about-content a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 96px 0;
+      }
+
+      .hero h1 {
+        text-align: center;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .section-label {
+        text-align: center;
+        letter-spacing: 0.08em;
+      }
+    }
+  </style>
+</html>

@@ -14,15 +14,15 @@ posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>首页</title>
+    <title>Eitous's Blog</title>
   </head>
 
   <body>
     <Header />
     <main>
       <section class="hero">
-        <h1>Thoughts on Dev, Writing, and Quiet Mind.</h1>
-        <p>Collections of fragments of me.</p>
+        <h1>Thoughts on Dev, Writing, and Zen.</h1>
+        <p>Collection of fragments of me.</p>
       </section>
       <section class="content">
         <div>
@@ -44,7 +44,7 @@ posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
             }
           </ul>
           <div style="text-align: center; margin-top: 32px;">
-            <a href="/blog/">View All Essays</a>
+            <a href="/blog/">View All Posts</a>
           </div>
         </div>
         <aside>
@@ -71,7 +71,7 @@ posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 
   body {
     font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
@@ -173,5 +173,17 @@ posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
   aside {
     border-left: 1px solid var(--border);
     padding-left: 32px;
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      grid-template-columns: 1fr;
+    }
+
+    aside {
+      border-left: none;
+      padding-left: 0;
+      margin-top: 48px;
+    }
   }
 </style>
