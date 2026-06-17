@@ -8,3 +8,8 @@ public/
 _multiconfig.yml
 build.sh
 
+.astro/
+.wrangler/
+dist/
+.test/
+.vscode/
