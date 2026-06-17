@@ -7,7 +7,7 @@ tags:
   - 高等代数
 categories:
   - 高等代数
-draft: false
+draft: true
 type: Note
 ---
 

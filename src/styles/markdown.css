@@ -1,0 +1,18 @@
+.content blockquote {
+  border-left: 1px solid var(--muted);
+  padding-left: 1em;
+  margin-left: 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.content a {
+  color: var(--text);
+  border-bottom: 1px solid var(--text);
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: var(--muted);
+  border-bottom: 1px solid var(--muted);
+}
