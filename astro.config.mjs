@@ -7,8 +7,6 @@ import { defineConfig } from 'astro/config';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 
-import cloudflare from '@astrojs/cloudflare';
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://blog.0x3f.io',
@@ -21,5 +19,4 @@ export default defineConfig({
 	},
 
   integrations: [mdx(), sitemap()],
-  adapter: cloudflare(),
 });
