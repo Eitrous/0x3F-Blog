@@ -13,3 +13,8 @@ build.sh
 dist/
 .test/
 .vscode/
+
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
