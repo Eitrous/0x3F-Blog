@@ -4,6 +4,8 @@ description: FAQ's here
 pubDate: 2026-04-12
 draft: false
 type: Journal
+tags:
+  - TouhouProject
 ---
 
 如果你还没访问过这个网站，可以点击[这里](https://fumo.touhouspots.com)

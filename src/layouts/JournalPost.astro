@@ -96,12 +96,16 @@ const {
 <style>
   body {
     font-family:  "Noto Serif CJK", Georgia, "Times New Roman", serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   main {
     width: min(920px, calc(100% - 40px));
     margin: 0 auto;
     padding: 40px 0 80px;
+    flex: 1;
   }
 
   nav {

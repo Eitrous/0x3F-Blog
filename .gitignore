@@ -26,3 +26,4 @@ pnpm-debug.log*
 .test/
 .vscode/
 .wrangler/
+src/content/blog/drafts/
