@@ -1,3 +1,8 @@
+.content p {
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
 .content blockquote {
   border-left: 1px solid var(--muted);
   padding-left: 1em;

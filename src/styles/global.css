@@ -1,9 +1,13 @@
 :root {
 	--font: Georgia, "Times New Roman", "Noto Serif CJK", serif;
-	--text: #000;
+	--bg: #fafafa;
+	--text: #222;
+	--accent: #000;
 	--muted: #888;
 	--border: #e5e5e5;
 }
 body {
 	font-family: var(--font);
+	background: var(--bg);
+	letter-spacing: 0.02em;
 }

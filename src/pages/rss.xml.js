@@ -12,6 +12,7 @@ export async function GET(context) {
   );
 
   return rss({
+    stylesheet: "/rss/styles.xsl",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     site: context.site,
